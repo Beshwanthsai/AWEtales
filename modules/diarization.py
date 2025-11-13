@@ -3,6 +3,7 @@ Diarization Module
 Handles speaker diarization using PyAnnote.
 """
 
+import numpy as np
 from pyannote.audio import Pipeline
 import torch
 from typing import List, Dict

@@ -3,6 +3,7 @@ ASR Module
 Handles automatic speech recognition using Whisper.
 """
 
+import numpy as np
 import whisper
 from typing import List, Dict
 
