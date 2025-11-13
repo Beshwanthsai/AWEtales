@@ -25,7 +25,7 @@ The pipeline consists of the following stages:
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Beshwanthsai/AWEtales.git
    cd AWEtales
    ```
 
@@ -34,10 +34,13 @@ The pipeline consists of the following stages:
    pip install -r requirements.txt
    ```
 
-3. Set up Hugging Face token for PyAnnote (if required):
-   ```bash
-   export HF_TOKEN=your_token_here
-   ```
+3. Set up Hugging Face token for PyAnnote (required for diarization and VAD):
+   - Get token from https://huggingface.co/settings/tokens
+   - Set environment variable:
+     ```bash
+     export HF_TOKEN=your_huggingface_token_here
+     ```
+   Or add to config.
 
 ## Usage
 
