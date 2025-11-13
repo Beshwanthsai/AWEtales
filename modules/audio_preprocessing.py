@@ -1,6 +1,6 @@
 import librosa
 import numpy as np
-from audio_separator import Separator
+from audio_separator.separator import Separator
 from pyannote.audio import Pipeline
 import torch
 import soundfile as sf
