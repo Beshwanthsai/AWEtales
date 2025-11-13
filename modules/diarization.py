@@ -15,12 +15,9 @@ class Diarizer:
         self.pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1",
                                                  use_auth_token=config.get("hf_token"))
 
-    def diarize(self, audio: np.ndarray) -> List[Dict]:
-        # Placeholder: Convert numpy array to pyannote format
-        # PyAnnote expects file path or Audio object
-        # For now, assume audio is processed
-        # This needs proper implementation
-        diarization = self.pipeline({"waveform": torch.tensor(audio).unsqueeze(0), "sample_rate": self.config.get("sample_rate", 16000)})
+    def diarize(self, audio_path: str) -> List[Dict]:
+        # Use PyAnnote with file path
+        diarization = self.pipeline(audio_path)
 
         # Convert to list of dicts
         segments = []

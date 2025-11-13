@@ -31,7 +31,7 @@ class UnifiedNeuralPipeline:
         target_audio = self.separator.separate(processed_audio, target_sample_path)
 
         # Step 3: Diarize
-        diarization_result = self.diarizer.diarize(processed_audio)
+        diarization_result = self.diarizer.diarize(mixture_audio_path)
 
         # Step 4: ASR on each segment
         transcripts = self.asr.transcribe_segments(processed_audio, diarization_result)

@@ -5,7 +5,7 @@ Handles voice separation using MossFormer2 and audio restoration with Apollo.
 
 import numpy as np
 import librosa
-from typing import str
+from typing import Dict
 
 class SpeakerSeparator:
     def __init__(self, config: dict):
