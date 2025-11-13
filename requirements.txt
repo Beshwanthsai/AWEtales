@@ -13,4 +13,7 @@ uvicorn
 pytorch-lightning
 transformers
 sentencepiece
+audio-separator
+speechbrain
+deepmultilingualpunctuation
 # Add more as needed for specific models
