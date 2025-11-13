@@ -1,0 +1,16 @@
+torch>=2.0.0
+torchaudio>=2.0.0
+numpy
+scipy
+pyannote.audio
+openai-whisper
+pydub
+librosa
+soundfile
+websockets
+fastapi
+uvicorn
+pytorch-lightning
+transformers
+sentencepiece
+# Add more as needed for specific models
