@@ -11,21 +11,18 @@ from typing import List, Dict
 class Diarizer:
     def __init__(self, config: dict):
         self.config = config
-        # Initialize PyAnnote pipeline
-        self.pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1",
-                                                 use_auth_token=config.get("hf_token"))
+        # Skip PyAnnote for now due to access restrictions
+        self.pipeline = None
 
     def diarize(self, audio_path: str) -> List[Dict]:
-        # Use PyAnnote with file path
-        diarization = self.pipeline(audio_path)
-
-        # Convert to list of dicts
-        segments = []
-        for segment, _, speaker in diarization.itertracks(yield_label=True):
-            segments.append({
-                "start": segment.start,
-                "end": segment.end,
-                "speaker": speaker
-            })
-
+        # Placeholder: assume single speaker for entire audio
+        # In real implementation, use PyAnnote after access is granted
+        import librosa
+        audio, sr = librosa.load(audio_path, sr=16000)
+        duration = len(audio) / sr
+        segments = [{
+            "start": 0.0,
+            "end": duration,
+            "speaker": "SPEAKER_00"
+        }]
         return segments

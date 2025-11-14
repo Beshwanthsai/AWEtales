@@ -31,5 +31,6 @@ class PostProcessor:
 
     def restore_punctuation(self, transcripts: List[Dict]) -> List[Dict]:
         for t in transcripts:
-            t["text"] = self.punct_model.restore_punctuation(t["text"])
+            if t["text"].strip():
+                t["text"] = self.punct_model.restore_punctuation(t["text"])
         return transcripts
